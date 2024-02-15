@@ -39,7 +39,7 @@ jobs:
            -Dsonar.host.url=${{ secrets.SONAR_URL }}
            -Dsonar.login=${{ secrets.SONAR_TOKEN }}
            -Dsonar.organization=${{ secrets.SONAR_ORGANIZATION }}
-           -Dsonar.projectKey=${{ env.PROJECT_KEY }}
+           -Dsonar.projectKey=vproapp36
            -Dsonar.sources=src/
            -Dsonar.java.binaries=target/test-classes/com/visualpathit/account/controllerTest/ 
            -Dsonar.junit.reportsPaths=target/surefire-reports/ 
