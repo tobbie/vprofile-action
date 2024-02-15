@@ -45,6 +45,7 @@ jobs:
              -Dsonar.junit.reportsPaths=target/surefire-reports/ 
              -Dsonar.jacoco.reportsPaths=target/jacoco.exec
              -Dsonar.java.checkstyle.reportPaths=target/checkstyle-result.xml
+             -Dsonar.verbose=true
 
         # check the quality gate status
       - name: SonarQube quality gate check
