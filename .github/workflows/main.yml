@@ -4,6 +4,7 @@ env:
   AWS_REGION: us-east-2
   ECR_REPOSITORY: vprofileapp
   EKS_CLUSTER: vprofile-eks
+  PROJECT_KEY: vproapp36
 
 
 jobs:
@@ -38,7 +39,7 @@ jobs:
            -Dsonar.host.url=${{ secrets.SONAR_URL }}
            -Dsonar.login=${{ secrets.SONAR_TOKEN }}
            -Dsonar.organization=${{ secrets.SONAR_ORGANIZATION }}
-           -Dsonar.projectKey=${{ secrets.SONAR_PROJECT_KEY }}
+           -Dsonar.projectKey=${{ env.PROJECT_KEY }}
            -Dsonar.sources=src/
            -Dsonar.java.binaries=target/test-classes/com/visualpathit/account/controllerTest/ 
            -Dsonar.junit.reportsPaths=target/surefire-reports/ 
