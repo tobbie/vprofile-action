@@ -38,8 +38,8 @@ jobs:
         run: sonar-scanner -X
              -Dsonar.host.url=${{ secrets.SONAR_URL }} 
              -Dsonar.login=${{ secrets.SONAR_TOKEN }}
-             -Dsonar.organization=${{ secrets.SONAR_ORGANIZATION }} 
              -Dsonar.projectKey=${{ secrets.SONAR_PROJECT_KEY }}
+             -Dsonar.organization=${{ secrets.SONAR_ORGANIZATION }} 
              -Dsonar.sources=src/
              -Dsonar.java.binaries=target/test-classes/com/visualpathit/account/controllerTest/  
              -Dsonar.junit.reportsPaths=target/surefire-reports/ 
