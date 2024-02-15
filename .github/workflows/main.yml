@@ -40,13 +40,12 @@ jobs:
              -Dsonar.login=${{ secrets.SONAR_TOKEN }}
              -Dsonar.projectKey=${{ secrets.SONAR_PROJECT_KEY }}
              -Dsonar.organization=${{ secrets.SONAR_ORGANIZATION }} 
-             -Dsonar.projectName=vprofile
              -Dsonar.sources=src/
-             -Dsonar.java.binaries=target/test-classes/com/visualpathit/account/controllerTest/
+             -Dsonar.java.binaries=target/classes
              -Dsonar.junit.reportsPaths=target/surefire-reports/ 
              -Dsonar.jacoco.reportsPaths=target/jacoco.exec 
              -Dsonar.java.checkstyle.reportPaths=target/checkstyle-result.xml
-             -Dsonar.exclusions=src/java/test/**
+             
               
 
         # check the quality gate status
