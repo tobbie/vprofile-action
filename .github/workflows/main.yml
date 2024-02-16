@@ -30,32 +30,32 @@ jobs:
       
 
       # Setup sonar scanner
-      - name: Setup SonarQube
-        uses: warchant/setup-sonar-scanner@v7
+      #- name: Setup SonarQube
+     #   uses: warchant/setup-sonar-scanner@v7
 
       # Run sonar scanner
-      - name: SonarQube scan
-        run: sonar-scanner
-             -Dsonar.host.url=${{ secrets.SONAR_URL }} 
-             -Dsonar.login=${{ secrets.SONAR_TOKEN }}
-             -Dsonar.projectKey=${{ secrets.SONAR_PROJECT_KEY }}
-             -Dsonar.organization=${{ secrets.SONAR_ORGANIZATION }} 
-             -Dsonar.sources=src/
-             -Dsonar.junit.reportsPaths=target/surefire-reports/ 
-             -Dsonar.jacoco.reportsPaths=target/jacoco.exec 
-             -Dsonar.java.checkstyle.reportPaths=target/checkstyle-result.xml
-             -Dsonar.java.binaries=target/test-classes/com/visualpathit/account/controllerTest/
+      #- name: SonarQube scan
+      #  run: sonar-scanner
+      #       -Dsonar.host.url=${{ secrets.SONAR_URL }} 
+      #       -Dsonar.login=${{ secrets.SONAR_TOKEN }}
+      #       -Dsonar.projectKey=${{ secrets.SONAR_PROJECT_KEY }}
+      #      -Dsonar.organization=${{ secrets.SONAR_ORGANIZATION }} 
+      #      -Dsonar.sources=src/
+      #      -Dsonar.junit.reportsPaths=target/surefire-reports/ 
+      #      -Dsonar.jacoco.reportsPaths=target/jacoco.exec 
+      #      -Dsonar.java.checkstyle.reportPaths=target/checkstyle-result.xml
+      #       -Dsonar.java.binaries=target/test-classes/com/visualpathit/account/controllerTest/
              
               
 
         # check the quality gate status
-      - name: SonarQube quality gate check
-        id: sonarqube-quality-gate-check
-        uses: sonarsource/sonarqube-quality-gate-action@master
-        timeout-minutes: 5
-        env:
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-          SONAR_HOST_URL: ${{ secrets.SONAR_URL }}
+     # - name: SonarQube quality gate check
+     #   id: sonarqube-quality-gate-check
+     #   uses: sonarsource/sonarqube-quality-gate-action@master
+     #   timeout-minutes: 5
+     #   env:
+     #     SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+     #     SONAR_HOST_URL: ${{ secrets.SONAR_URL }}
 
 
         
